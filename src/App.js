@@ -12,7 +12,8 @@ class App extends Component {
   componentDidMount(){
     IMAGES.forEach((picture)=>{
         const img = new Image();
-        img.src = picture.fileName;
+        img.src = picture.src;
+        console.log(img)
        })
     demoAsyncCall().then(()=>
     this.setState({loading:false}))
