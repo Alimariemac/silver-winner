@@ -1,45 +1,68 @@
 import './App.css';
 import Main from './components/MainComponent';
-import React, {Component} from 'react'
+import React, {Component, useEffect, useState} from 'react'
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 import {IMAGES} from './Images'
 
-class App extends Component {
-  state = {
-    loading:true
-  }
-  componentDidMount(){
-    IMAGES.forEach((picture)=>{
-        const img = new Image();
-        img.src = picture.src;
-        console.log(img)
-       })
-    demoAsyncCall().then(()=>
-    this.setState({loading:false}))
-//  IMAGES.forEach((picture)=>{
-//   const img = new Image();
-//   img.src = picture.fileName;
-//  }));
-  }
-  render(){
-    const { loading } = this.state;
-    
-    if(loading) {
-      return <h1>Loading</h1>
-    }
+function App() {
+
+// componentDidMount(){
+//   const[isLoading, setIsLoading] = useState(true)
+//   IMAGES.map((src)=>{
+//     const img = new Image();
+//     img.src = src;
+//     img.onload = () => {
+//       this.setState({loading:false});
+//     }
+//     })
+//     console.log(this.state.loading)
+//   }
+
+
+const [isLoading, setIsLoading] = useState(true)
+useEffect(()=>{
+  const imgs= IMAGES
+  cacheImages(imgs)
+})
+const cacheImages = async(srcArray)=>{
+  const promises = await srcArray.map((src)=>{
+    return new Promise(function(resolve, reject){
+      const img = new Image();
+      img.onload = resolve();
+      img.onerror = reject();
+    })
+  });
+  await Promise.all(promises);
+  setIsLoading(false)
+}
     return(
-      <BrowserRouter>
+      <div className = 'App'>
+        {isLoading
+        ?
+        <div>
+        <h1>Loading</h1>
+      </div>
+      :
+       <BrowserRouter>
         <div fluid className="App">
             <Main/>
         </div>
-      </BrowserRouter>
+      </BrowserRouter>}
+      </div>
+        
     )
   }
-}
 
-function demoAsyncCall() {
-  return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-}
+// const cacheImages = async function(IMAGES) {
+//   const promises = await IMAGES.map((src)=>{
+//     const img = new Image();
+//     img.src = src;
+//     img.onload = resolve()
+//     img.onerror = reject()
+//   })
+//   await Promise.all(promises)
+//   this.setState({loading:false});
+// };
 
 export default App;
