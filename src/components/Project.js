@@ -1,4 +1,4 @@
-import {React, Component, Fragment} from 'react';
+import {React, Component, Fragment, useEffect} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
 import Header from './HeaderComponent';
 import NonIllustrationComponent from './NonIllustrationComponent'
@@ -14,7 +14,9 @@ class Project extends Component {
             projects: PROJECTS
         }
     }
+    
     render(){
+        
         const project = this.props.project
         const projects = this.state.projects
 

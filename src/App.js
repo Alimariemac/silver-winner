@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './components/MainComponent';
-import React, {Component, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 import {IMAGES} from './Images'
@@ -24,6 +24,7 @@ const [isLoading, setIsLoading] = useState(true)
 useEffect(()=>{
   const imgs= IMAGES
   cacheImages(imgs)
+  
 })
 
 const cacheImages = async(srcArray)=>{
