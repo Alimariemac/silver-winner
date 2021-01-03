@@ -25,7 +25,8 @@ let blue = "https://images.ctfassets.net/4hhd3ng2fxzv/3qvj8cHP0jz1Fv6kRtOJRp/d8e
 let orange = "https://images.ctfassets.net/4hhd3ng2fxzv/2XHc031xbnUvu1EjfnzfTU/973d707955c7990797d313566e815b6b/texture5.jpg"
 let green = "https://images.ctfassets.net/4hhd3ng2fxzv/6Hyh62h8hBl7K3mZIEQ8N3/b2c8342aa594f2ce621e8430939ebe7d/texture4.jpg"
 let purple = "https://images.ctfassets.net/4hhd3ng2fxzv/33lbvAY2dnLFk3O2oM6oSl/689b75c5843645e472e64096ba96ea0c/texture3.jpg"
-
+//misc
+let Hangel = "https://images.ctfassets.net/4hhd3ng2fxzv/59XLeKjKskOaSI1Ar30Mij/ead55ae60e97cae2192e17738115ee06/Hangel.jpg"
 
 export const IMAGES = [
     {id:0,
@@ -90,5 +91,8 @@ export const IMAGES = [
     },
     {id:19,
     src:purple
+    },
+    {id:20,
+    src:Hangel
     }
 ]
