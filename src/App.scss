@@ -1,0 +1,248 @@
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+$font-stack: "Gangster", sans-serif;
+$parallax-perspective: 1 !default;
+$parallax-element: "body" !default;
+$parallax-ios: true !default;
+$background-color-dark: #1f1f1f;
+$background-color-light: #ffffff;
+
+@font-face {
+  font-family: "Gangster";
+  src: local("Gangster"), url(./assets/gangstergrotesk-bold.woff) format("woff");
+}
+@mixin parallax-init(
+  $perspective: $parallax-perspective,
+  $element: $parallax-element,
+  $parallax-ios: $parallax-ios
+) {
+  @if $element == "body" {
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+  #{$element} {
+    overflow: auto;
+    perspective: $perspective * 1px;
+    transform-style: preserve-3d;
+    // Allows for smooth scrolling but disables parallax effects.
+    @if $parallax-ios == false {
+      -webkit-overflow-scrolling: touch;
+    }
+    // Preserve 3D
+    &,
+    * {
+      transform-style: preserve-3d;
+    }
+  }
+}
+
+@mixin parallax($distance: 0, $perspective: $parallax-perspective) {
+  transform: translateZ($distance * $perspective * 1px)
+    scale(abs($distance - 1));
+  z-index: $distance * 1000;
+}
+
+@include parallax-init;
+
+body {
+  font: 100% $font-stack;
+  background-color: $background-color-light;
+  color: $background-color-dark;
+  a {
+    color: black;
+    font-weight: 500;
+  }
+  a:hover {
+    color: black;
+  }
+  .modeIcon {
+    background-image: url(assets/moon.svg);
+  }
+}
+h4 {
+  text-transform: uppercase;
+}
+
+body.dark-mode {
+  font: 100% $font-stack;
+  background-color: $background-color-dark;
+  color: $background-color-light;
+  a {
+    color: white;
+    font-weight: 700;
+  }
+  a:hover {
+    color: white;
+  }
+  .modeIcon {
+    background-image: url(assets/sun.svg);
+  }
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 5rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.spacer {
+  padding-top: 5rem;
+}
+
+.header {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.hiddenDiv {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.full-width {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+}
+
+.accordion-lines {
+  padding-top: 2em;
+  padding-bottom: 2rem;
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+}
+
+.mainContainer {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  mix-blend-mode: luminosity;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.mainImg {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 15%;
+  left: 15%;
+  z-index: 1000;
+  background-size: cover;
+}
+
+@keyframes magic {
+  0% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0% 50%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0% 50%);
+  }
+  20% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.inset {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  animation: magic 4s infinite;
+}
+
+.pageMainImg {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+//5 cols, 10 rows
+.img1 {
+  background: url(assets/alicia.jpg);
+  background-size: cover;
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 3;
+  // @include parallax(.09);
+}
+
+.stats {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.img2 {
+  background: url(assets/alicia.jpg);
+  background-size: cover;
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 3;
+  // @include parallax(.13);
+}
+
+.img3 {
+  background: url(assets/alicia.jpg);
+  background-size: cover;
+  grid-column: 4 / span 2;
+  grid-row: 6 / span 4;
+  // @include parallax(.11);
+}
+
+.inlineImg {
+  max-width: 100px;
+}
+
+p {
+  line-height: 1.7rem;
+  font-family: sans-serif;
+}
+
+.absolute {
+  position: absolute;
+  word-break: break-word;
+}
+
+.largeText {
+  font-size: 8rem;
+  color: white;
+  text-align: center;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.textTop {
+  position: absolute;
+  top: 0;
+}
+.textBottom {
+  position: absolute;
+  bottom: 0;
+}
