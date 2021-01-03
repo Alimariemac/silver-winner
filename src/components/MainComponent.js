@@ -12,6 +12,8 @@ class Main extends Component {
             projects:PROJECTS
         };
     }
+
+    
 render(){
         const ProjectWithId = ({match}) => {
             return (

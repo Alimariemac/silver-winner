@@ -9,15 +9,8 @@ import {ReactComponent as Matcha} from '../assets/matcha.svg'
 import Hangel from "../assets/Hangel.jpg"
 import Header from './HeaderComponent';
 
-class Home extends Component{
-    constructor(props) {
-        super(props); 
-        this.state = {
-            experience: EXPERIENCE
-        }
-    }
 
-    render(){
+function Home(props){
         return(
             <Fragment>
                 <Container fluid>
@@ -58,6 +51,5 @@ class Home extends Component{
             </Fragment>
         )
     }
-}
 
 export default Home;

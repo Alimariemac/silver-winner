@@ -5,6 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Slide from 'react-reveal/Slide'
 import ScrollAnimation from 'react-animate-on-scroll';
+import LazyLoad from 'react-lazyload';
 
 class Accordion extends Component {
     constructor(props) {
