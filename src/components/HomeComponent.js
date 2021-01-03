@@ -5,9 +5,9 @@ import Accordion from './AccordionComponent'
 import {EXPERIENCE} from '../shared/experience'
 import {ReactComponent as Rainbow} from '../assets/rainbow.svg'
 import {ReactComponent as FlowerDrop} from '../assets/flower-drop.svg'
-import {ReactComponent as Matcha} from '../assets/matcha.svg'
-import Hangel from "../assets/Hangel.jpg"
 import Header from './HeaderComponent';
+let Hangel = "https://images.ctfassets.net/4hhd3ng2fxzv/59XLeKjKskOaSI1Ar30Mij/ead55ae60e97cae2192e17738115ee06/Hangel.jpg"
+
 
 
 function Home(props){
