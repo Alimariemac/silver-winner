@@ -38,10 +38,12 @@ const cacheImages = async(srcArray)=>{
   });
   await Promise.all(promises);
   setIsLoading(false)
+  console.log(document.fonts.status)
 }
+const fontStatus = document.fonts.status
     return(
       <div className = 'App'>
-        {isLoading
+        {isLoading || fontStatus == "false"
         ?
         <div>
         <h1>Loading</h1>
