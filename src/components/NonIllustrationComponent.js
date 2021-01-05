@@ -75,8 +75,6 @@ function NextSteps(props){
 
 function GetProject(props){
     let imageReveal = CSSRulePlugin.getRule('.img-container:after')
-   
-    
 
     const project = props.project
     const numbers = project.numbers.map(m=>{
@@ -88,6 +86,7 @@ function GetProject(props){
             )
         })
         
+        //imageReveal is afefecting all. need it to affect just that specific one.
     useEffect(()=>{
         let count = 0
         const sections = Array.from(document.querySelectorAll("section"))
@@ -97,13 +96,13 @@ function GetProject(props){
                     paused: true, 
                 }
             ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-            .to(imageReveal, 1.4, {width:"0%", ease:Power2.easeInOut})
+            .to(sec.querySelector(".black-container"), 1.4, {width:"0%", ease:Power2.easeInOut})
             .from(sec.querySelector(".image-moving"), 1.4, {scale:1.6, ease:Power2.easeInOut, delay:-1.6})
             ScrollTrigger.create({
                 animation:tl,
                 trigger:sec,
                 start:"center bottom",
-                end:"bottom top",
+                end:"+=400",
                 markers:true
         })
         console.log(count+=1)
@@ -135,11 +134,13 @@ return(
                         <div>
                             <div className = "grid1">
                                 <section>
-                                <div className = "img-container" style = {{gridColumn: "1 / span 3", gridRow: "1 / span 6"}}>
+                                    <div className="black-container"></div>
+                                <div className = "img-container " style = {{gridColumn: "1 / span 3", gridRow: "1 / span 6"}}>
                                     <img className = "image-moving" src = {project.images[0].src} />
                                 </div>
                                 </section>
                                 <section>
+                                <div className="black-container"></div>
                                 <div className = "img-container" style = {{gridColumn: " 5 / span 3", gridRow: "4 / span 6"}}>
                                     <img className = "image-moving" src = {project.images[1].src} />
                                 </div>
@@ -164,11 +165,13 @@ return(
                     <div>
                             <div className = "grid1">
                                 <section>
+                                <div className="black-container"></div>
                                 <div className = "img-container" style = {{gridColumn: "1 / span 3", gridRow: "1 / span 6"}}>
                                     <img className = "image-moving" src = {project.images[0].src} />
                                 </div>
                                 </section>
                                 <section>
+                                <div className="black-container"></div>
                                 <div className = "img-container" style = {{gridColumn: " 5 / span 3", gridRow: "4 / span 6"}}>
                                     <img className = "image-moving" src = {project.images[1].src} />
                                 </div>
