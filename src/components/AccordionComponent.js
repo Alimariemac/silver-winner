@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
-import {Collapse} from 'reactstrap'
 import {PROJECTS} from '../shared/projects'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import Slide from 'react-reveal/Slide'
-import ScrollAnimation from 'react-animate-on-scroll';
-import LazyLoad from 'react-lazyload';
 
 class Accordion extends Component {
     constructor(props) {
@@ -23,14 +19,12 @@ class Accordion extends Component {
                 return <h4 style = {{textTransform:"uppercase"}}>{i}</h4>
             })
             return(
-                <Container className="accordion-lines">
-                    
+                         
             <div key = {project.id}> 
-               
-                    <Row>
+                    <Row key = {project.id}>
                     <div className = "order-lg-2 col-lg-6 offset-lg-1 mainContainer" style={{backgroundColor:`${project.color}`, backgroundImage: `url(${project.backgroundImage})`}}>
                             <h1 className = "largeText textTop">{project.text1}</h1>
-                            <div className = "mainImg inset " style = {{backgroundImage: `url(${project.images[0].src})`}}></div>   
+                            <div className = "mainImg inset " style = {{backgroundImage: `url(${project.coverImage})`}}></div>   
                             <h1 className = "largeText textBottom">{project.text2}</h1>
                        </div>
                        <span className = "spacer"></span>
@@ -45,14 +39,13 @@ class Accordion extends Component {
                     </Row>
                     <div className = "spacer"></div>
             </div>
-           
-            </Container>
+
             )
         })
         return(
-            <div className="full-width">
+            <Container className="accordion-lines">
                 {directory}
-            </div>
+                </Container>
         )
     }
 }

@@ -1,24 +1,12 @@
 import './App.css';
 import Main from './components/MainComponent';
 import React, {useEffect, useState} from 'react'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import './App.scss';
-import {IMAGES} from './Images'
+import {IMAGES} from './shared/Images'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
-
-// componentDidMount(){
-//   const[isLoading, setIsLoading] = useState(true)
-//   IMAGES.map((src)=>{
-//     const img = new Image();
-//     img.src = src;
-//     img.onload = () => {
-//       this.setState({loading:false});
-//     }
-//     })
-//     console.log(this.state.loading)
-//   }
-
 
 const [isLoading, setIsLoading] = useState(true)
 useEffect(()=>{
@@ -37,26 +25,27 @@ const cacheImages = async(srcArray)=>{
     })
   });
   await Promise.all(promises);
-  setTimeout(function(){
-    setIsLoading(false)},2000
-  );
+  setIsLoading(false)
+  // setTimeout(function(){
+  //   setIsLoading(false)},3000
+  // );
 }
   
     return(
-      <div className = 'App'>
+      <div>
         {isLoading || !document.fonts.ready
         ?
         <div>
         <h1>Loading</h1>
       </div>
       :
-       <BrowserRouter>
+       <Router >
+       <ScrollToTop />
         <div fluid className="App">
             <Main/>
         </div>
-      </BrowserRouter>}
+      </Router>}
       </div>
-        
     )
   }
 

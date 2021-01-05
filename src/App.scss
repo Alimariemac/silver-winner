@@ -43,14 +43,14 @@ $background-color-light: #ffffff;
 }
 
 @mixin parallax($distance: 0, $perspective: $parallax-perspective) {
-  transform: translateZ($distance * $perspective * 1px)
-    scale(abs($distance - 1));
+  transform: translateZ($distance * $perspective * 1px);
+  //   scale(abs($distance - 1));
   z-index: $distance * 1000;
 }
 
 @include parallax-init;
 
-body {
+body.dark-mode {
   font: 100% $font-stack;
   background-color: $background-color-light;
   color: $background-color-dark;
@@ -69,7 +69,7 @@ h4 {
   text-transform: uppercase;
 }
 
-body.dark-mode {
+body {
   font: 100% $font-stack;
   background-color: $background-color-dark;
   color: $background-color-light;
@@ -138,7 +138,8 @@ h2 {
 
 .grid1 {
   display: grid;
-  grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+  min-height: 30rem;
+  grid-template-columns: 20fr 5fr 20fr 5fr 20fr 5fr 20fr;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
 }
 
@@ -184,34 +185,43 @@ h2 {
   object-fit: cover;
 }
 
-//5 cols, 10 rows
-.img1 {
-  background: url(assets/alicia.jpg);
-  background-size: cover;
-  grid-column: 2 / span 3;
-  grid-row: 1 / span 3;
-  // @include parallax(.09);
+.parallaxSlow {
+  @include parallax(0.09);
 }
+
+.parallaxFast {
+  @include parallax(0.15);
+}
+
+//5 cols, 10 rows
 
 .stats {
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
 
-.img2 {
-  background: url(assets/alicia.jpg);
-  background-size: cover;
-  grid-column: 1 / span 2;
-  grid-row: 5 / span 3;
-  // @include parallax(.13);
+.container-slide {
+  visibility: hidden;
 }
 
-.img3 {
-  background: url(assets/alicia.jpg);
-  background-size: cover;
-  grid-column: 4 / span 2;
-  grid-row: 6 / span 4;
-  // @include parallax(.11);
+.img-container {
+  width: 700px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #1f1f1f;
+  }
+  img {
+    width: 700px;
+    position: absolute;
+  }
 }
 
 .inlineImg {
@@ -221,6 +231,11 @@ h2 {
 p {
   line-height: 1.7rem;
   font-family: sans-serif;
+}
+
+.p-small {
+  font-size: 12px;
+  text-align: right;
 }
 
 .absolute {
