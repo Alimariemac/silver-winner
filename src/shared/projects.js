@@ -2,7 +2,7 @@ import flower from "../assets/flower.svg"
 import ruler from "../assets/ruler.svg"
 import rainbow from "../assets/rainbow.svg"
 import stars from "../assets/stars.svg"
-import {IMAGES} from "../shared/Images"
+import {IMAGES} from "./Images"
 
 const FSQImages = IMAGES.filter(i=> i.project === "FSQ")[0]
 const BatchImages = IMAGES.filter(i=> i.project === "Batch")[0]
@@ -18,23 +18,23 @@ export const PROJECTS = [
         name:"Launching a brand new Foursquare",
         images: FSQImages.images,
         backgroundImage: BackgroundImages[0].src,
-        fullImage: "",
+        fullImage: FSQImages.fullImage.src,
         coverImage: FSQImages.coverImage.src,
         text1:"Web",
         text2:"Design",
-        description:"I led Foursquare's website consolidation project where we merged 3 companies (and their websites) into one cohesive brand and website that finally encapsulated the story of Foursquare and where it is today.", 
+        description:"I led Foursquare's website consolidation project where we merged 3 companies into one cohesive brand and website that finally encapsulated the story of Foursquare and where it is today.", 
         color:"#A18ABA",
         year:"2019",
         company: "Foursquare",
         tags: "UX/UI\nproject management\nillustration\nvideos",
-        tldr:"",
-        role:"",
-        why:"",
-        research:"",
-        iterations:"",
-        next:"",
+        tldr:"Foursquare had acquired Factual and Placed in the past 3 years and was at the point as a company where it needed a cohesive brand and website to really tell the story of where Foursquare is today. Many people still think of Foursquare as the 'check-in app' when in reality it a leader in the location technology space. To achieve this, we combined the 3 companies' websites into one new one along with a new, more minimalist brand that lets Foursquare's data and accomplishments speak for itself.  ",
+        role:"I ran the preliminary stakeholder and UX research, conducted a site-audit and created the site map, user-flows and component maps for each page. I communicated my findings with our design/development agency, Fictive Kin, as they fleshed out the design for the reusable components. I also created many of the illustrations and videos and delegated work to other designers when needed. I kept stakeholders in the loop of the project and facilitated conversations between the proper people. I worked with Foursquare's Engineering team and Infrastructure team to make sure that there was a seamless transition between the old site and new site.",
+        why:"Foursquare's identity had been confused for a while. We had multiple different design styles, brand voices and a general lack of direction conveyed. This was made all the worse when we acquired not one, but two other location companies. The old website was beginning to be outdated and had quite high bounce rates due to confusion over what our products were. The new website launch corresponded with a full rebrand and focused on re-introducing our products with less jargon to our customers, new and old.",
+        research:"I started this project with a lot of research. Although we knew we wanted to create a new website, we wanted to make sure that it implemented needs from across the organisation. I started with stakeholder interviews with 16 main stakeholders of the organisation and 6 top customers and compared the top-mentioned needs. They included: the need for better lead generation, making the website more customer focused (how we solve our customer's problems), telling a cohesive story and implementing a more intuitive navigation. I also conducted a company-wide survey on the three websites that were to be merged and a site-audit on all three sites. Based on the preliminary research and the site audit, I created V1 of a sitemap. I then walked different stakeholders through the map to get feedback and update. I created a V2 as well and then the team presented the 2 options to leadership. Based on the site map and the user personas (that the product-marketing team created), I created 6 user flows to map out the most common optimal path for these users. Based on these we knew what actions we wanted the users to take and how to direct them.",
+        iterations:"Based on the site map, I created a “component map” spreadsheet for each page of the site. The spreadsheet included the user mindset, user tasks, org goal, and key metrics. Then I mapped out each page in words including a label, description, core content, and features. The template for this was provided by Fictive Kin. Based on the component maps, I took the wireframed components created by Fictive Kin and conducted Stakeholder calls to create wireframes of each full page. I then “translated” each design into a document for the Stakeholders to fill out (copy and links) so that the design team knew what we would have to create (illustrations, images etc.). After this I delegated designs to the rest of the design team members, taking on the bulk to the icon creation, illustrations and videos myself (as our small team was also updating all collateral in the new brand as well!). We enlisted the help of an SEO company (Jordan Digital Marketing) to help make sure that our site didn't lose traffic in any way. Before launch, we had an internal launch for the members of Foursquare to get feedback and do bug checks. Through this feedback we found that many people found the home page very ambiguous. The goal was to make it feel less static than the old home page but many people felt like it did not represent the company properly and that it felt almost like an online magazine homepage. After iterating on a few ideas, we came up with a homepage that tells you directly about Foursquare, and lists out solutions for our customers problems.",
+        next:"Our next steps are to implement a solutions section in the menu that allows our users to self-identify by job or vertical. These pages will help bring our multiple products together into a suite. We will also be expanding on our partner page to allow people to filter by vertical for easy access. We will also keep an eye on bounce rates and leads to make sure they are within acceptable bounds. ",
         icon:flower,
-        numbers:[{id:0, num:"300", text:"hello"},{id:1, num:"200", text:"hello"},{id:2, num:"100", text:"hello"}],
+        numbers:[{id:0, num:"5/week", text:"requests"},{id:1, num:"0", text:"requests after"},{id:2, num:"100%", text:"happy devs"}],
         special: false
 
     },
@@ -59,7 +59,7 @@ export const PROJECTS = [
         iterations:"For a seemingly simple change, this project went through a lot of iterations. The previous design that had the proper functionality seemed a bit disjointed, with the action buttons being quite far away from the objects that were being acted upon. My solution was a 'drawer' that would pop open when the user checked off a geofence. This seemed to work well but in presenting it to the project manager, I realized I had missed a key component. The main ask for this project was the ability to mass-export or delete, with a focus on being able to delete or export all of the geofences. This solution made the user go through too many actions to delete all geofences. First the user had to check off the top box, then 'select all' and then delete all. This works well if the user usually deletes one and may want to delete 2 or 3, but if the main point was to allow a fast way to delete/export all geofences, then this design missed the mark. I took a step back and looked at the project from a different lens and thought about how I could make delete all and export all more accessible. A drop-down menu was mentioned as a solution but seemed to be a bandaid rather than something well thought out. After careful consideration, I decided to make the first action available be 'export all (xnumber)' and 'delete all (xnumber)'. After the user ticked off a checkbox, this would change to 'export (xnumber)' and 'delete (xnumber)'. This change allowed for the main action to be easily taken without putting the user through a multi-step process.",
         next:"This project is currently in its dev handoff stage. Once implemented, we will solicit feedback from users, especially those who asked for this change. The biggest learning from this project was the importance of keeping the users' needs front and center.",
         icon:stars,
-        numbers:[{id:0, num:"300", text:"hello"},{id:1, num:"200", text:"hello"},{id:2, num:"100", text:"hello"}],
+        numbers:[{id:0, num:"5", text:"requests per week"},{id:1, num:"0", text:"requests after"},{id:2, num:"100%", text:"happy devs"}],
         special: false
     },
     {

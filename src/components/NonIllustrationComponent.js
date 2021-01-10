@@ -1,16 +1,21 @@
-import {React, Fragment, useRef, useEffect} from 'react';
+import {React, Fragment, useEffect} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
-import ScrollAnimation from 'react-animate-on-scroll';
-import CSSRulePlugin from "gsap/CSSRulePlugin"
-import {TimelineLite, Power2, gsap} from "gsap"
+import {Left1Right2, DoubleImage, OneOffsetImg, FullOne, OneFarOffsetImg} from '../components/ProjectImages'
+import Fade from 'react-reveal/Fade';
+import {Power2, gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLocation } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger);
-
+//page sections
 
 function Top(props){
     return(
-    <img src = {props.project.fullImage} className="pageMainImg"/>
+        <section>
+        <div className="black-container pageMainImg" ></div>
+            <div className = "img-container pageMainImg" style={{width:"100%", height:"70vh"}}>
+                <img className = "image-moving" src = {props.project.fullImage} style={{objectFit:"cover", width:"100%"}}/>
+            </div>
+        </section>
     )
 }
 function TLDR(props){
@@ -47,15 +52,18 @@ function Research(props){
             <p>{props.project.research}</p>
         </Fragment>
     )
+    
 }
 
 function Iterations(props){
+    console.log(props.project.images[0].w)
     return(
         <Fragment>
             <h3>Iterations</h3>
             <p>{props.project.iterations}</p>
         </Fragment>
     )
+    
 }
 
 function NextSteps(props){
@@ -66,142 +74,181 @@ function NextSteps(props){
         </Fragment>
     )
 }
-// TL;DR
-// My Role
-// Why
-// Research
-// Iterations
-// Learnings & Next Steps
+
+function Scroll(){
+document.querySelector("body").scrollTo(0,0)
+}
+
+
+// const scrollLoad = async () =>{
+//     const sections = Array.from(document.querySelectorAll("section"))
+
+//     new Promise((resolve, reject)=>{
+//         document.querySelector("body").scrollTo(0,0);
+//     }).then(()=>{
+//         sections.forEach(sec=>{
+//             let tl = new gsap.timeline(
+//                 {
+//                     paused: true, 
+//                 }
+//             ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
+//             .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
+//             .from(sec.querySelector(".image-moving"), 1.4, {scale:1.6, ease:Power2.easeInOut, delay:-1.6})
+//             ScrollTrigger.create({
+//                 animation:tl,
+//                 trigger:sec,
+//                 start:"top bottom",
+//         })
+//         }) 
+//     })
+// }
+
 
 function GetProject(props){
-    let imageReveal = CSSRulePlugin.getRule('.img-container:after')
-
+    // let imageReveal = CSSRulePlugin.getRule('.img-container:after')
+    const { pathname } = useLocation();
     const project = props.project
     const numbers = project.numbers.map(m=>{
             return(
             <Col key = {m.id}>
-            <h1>{m.num}</h1>
+            <h2 style = {{fontSize:"6rem"}}>{m.num}</h2>
             <p>{m.text}</p>
             </Col>
             )
         })
         
-        //imageReveal is afefecting all. need it to affect just that specific one.
-    useEffect(()=>{
-        let count = 0
-        const sections = Array.from(document.querySelectorAll("section"))
-        sections.forEach(sec=>{
-            let tl = new gsap.timeline(
-                {
-                    paused: true, 
-                }
-            ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-            .to(sec.querySelector(".black-container"), 1.4, {width:"0%", ease:Power2.easeInOut})
-            .from(sec.querySelector(".image-moving"), 1.4, {scale:1.6, ease:Power2.easeInOut, delay:-1.6})
-            ScrollTrigger.create({
-                animation:tl,
-                trigger:sec,
-                start:"center bottom",
-                end:"+=400",
-                markers:true
-        })
-        console.log(count+=1)
-        })
-        
-        
-    })
+        useEffect(()=>{
+            
+          Scroll()  
+          
+            const sections = Array.from(document.querySelectorAll("section"))
+            sections.forEach(sec=>{
+                let tl = new gsap.timeline(
+                    {
+                        paused: true, 
+                    }
+                ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
+                .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
+                .from(sec.querySelector(".image-moving"), 1.4, {scale:1.6, ease:Power2.easeInOut, delay:-1.6})
+                ScrollTrigger.create({
+                    animation:tl,
+                    trigger:sec,
+                    start:"top bottom",
+            })
+            }) 
+            
+        }, [pathname]);   
+   
         
 return(
     <div>
-        <Top project= {project}/>
-         
+        <Top project= {project}/> 
     <Container>
             <div className = "spacer"></div>
-            <Row>
-            </Row>
+            <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <TLDR project = {project}/>
+                    </div>
+            </Row>
+            </Fade>
+            <Fade>
+            <Row>
+                <div className = "col col-md-8 offset-md-4">
                     <Role project = {project}/>
+                </div>
+            </Row>
+            </Fade>
+            <Fade>
+            <Row>
+                <div className = "col col-md-8 offset-md-4">
                     <Why project = {project}/>
+                </div>
+            </Row>
+            </Fade>
+            
+             {project.id === 0 &&
+            <>
+                <FullOne image = {project.images[0]} />  
+                <p className = "p-small">Old Foursquare site</p> 
+                <DoubleImage img1 = {project.images[1]} img2= {project.images[2]} /> 
+                <p className = "p-small">Old Factual and Placed sites</p> 
+            </>
+            }
+            {project.id === 2 &&
+            <>
+                <FullOne image = {project.images[2]} />   
+                <FullOne image = {project.images[3]} /> 
+            </>
+            }
+            
+    
+{/* make img-container width = width of image (add width and height to images)??? 
+</div> */}
+            <Fade>
+            <Row>
+                <div className = "col col-md-8 offset-md-4">
                     <Research project = {project}/>
                 </div>
             </Row>
-                    {project.id === 1 &&
-                    <Row>
-                    <Col>
-                    <div className = "spacer"></div>
-                        <div>
-                            <div className = "grid1">
-                                <section>
-                                    <div className="black-container"></div>
-                                <div className = "img-container " style = {{gridColumn: "1 / span 3", gridRow: "1 / span 6"}}>
-                                    <img className = "image-moving" src = {project.images[0].src} />
-                                </div>
-                                </section>
-                                <section>
-                                <div className="black-container"></div>
-                                <div className = "img-container" style = {{gridColumn: " 5 / span 3", gridRow: "4 / span 6"}}>
-                                    <img className = "image-moving" src = {project.images[1].src} />
-                                </div>
-                                </section>
-                            {/* make img-container width = width of image (add width and height to images)??? */} 
-                        </div>
-                        </div>
-                    <div className = "spacer"></div>
-                    <p className="p-small">previous versions</p>
-                    </Col>
-                    </Row>
-                    }
+            </Fade>
+
+       {project.id === 0 &&
+                 <Left1Right2 img1={project.images[3]} img2={project.images[4]} img3={project.images[5]}/>  
+        }
+        {project.id === 1 &&
+                 <Left1Right2 img1={project.images[2]} img2={project.images[1]} img3={project.images[0]}/>  
+        }
+        {project.id === 3 &&
+                 <FullOne image = {project.images[0]}/>  
+        }
+         <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <Iterations project = {project}/>
                 </div>
             </Row>
+            </Fade>
             {project.id === 1 &&
-                    <Row>
-                    <Col>
-                    <div className = "spacer"></div>
-                    <div>
-                            <div className = "grid1">
-                                <section>
-                                <div className="black-container"></div>
-                                <div className = "img-container" style = {{gridColumn: "1 / span 3", gridRow: "1 / span 6"}}>
-                                    <img className = "image-moving" src = {project.images[0].src} />
-                                </div>
-                                </section>
-                                <section>
-                                <div className="black-container"></div>
-                                <div className = "img-container" style = {{gridColumn: " 5 / span 3", gridRow: "4 / span 6"}}>
-                                    <img className = "image-moving" src = {project.images[1].src} />
-                                </div>
-                                </section>
-                            {/* make img-container width = width of image (add width and height to images)??? */} 
-                        </div>
-                        </div>
-                        
-                    <div className = "spacer"></div>
-                    <p className="p-small">final version</p>
-                    </Col>
-                    </Row>
+                   <DoubleImage img1={project.images[3]} img2={project.images[4]}/>
+                    }
+                    {project.id === 2 &&
+                <DoubleImage img1 = {project.images[0]} img2={project.images[1]}/>  
             }
+            {project.id === 3 &&
+                 <FullOne image = {project.images[1]} />  
+            }
+            
+           
             </Container>
+
             <div className = "spacer"></div>
             <div className="stats" style= {{background:`${project.color}`}}>
                 <Container>
-                <Row >
+                    <Fade>
+                <Row>
                     {numbers}
              </Row>
-                </Container>      
+             </Fade>
+             
+                </Container>     
+                
             </div> 
-            
+            <div className= "spacer"></div> 
             <Container>
-            <div className = "spacer"></div>
+            {project.id === 1 &&
+                   <OneOffsetImg image={project.images[5]}/>
+                    }
+            {project.id === 2 &&
+                <OneOffsetImg image = {project.images[4]} />  
+            }
+    <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                 <NextSteps project = {project}/>
                 </div>
             </Row>
+            </Fade>
         </Container>
        
        </div>
@@ -209,3 +256,99 @@ return(
 }
 
 export default GetProject;
+{/* <div className = "grid1">
+<section style = {{gridColumn: " 1/ span 2", gridRow: "1 / span 2"}}>
+    <div className="black-container"></div>
+    <div className = "img-container">
+        <div className = "image-moving"  style={{background:`url(${project.images[2].src})`, backgroundSize:"cover", width: `${project.images[2].w}px`, height:`${project.images[2].h}px`}}/>
+    </div>
+</section>
+<section style = {{gridColumn: "2 / span 2", gridRow: "3 / span 1"}}>
+        <div className="black-container"></div>
+        <div className = "img-container " style = {{width: `${project.images[0].w}px`, height:`${project.images[0].h}px`}}>
+        <img className = "image-moving" src = {project.images[0].src} style={{width: `${project.images[0].w}px`, height:`${project.images[0].h}px`}}/>
+    </div>
+</section>
+<section style = {{gridColumn: " 2 / span 2", gridRow: "5 / span 2"}}>
+    <div className="black-container"></div>
+    <div className = "img-container" style = {{width: `${project.images[1].w}px`, height:`${project.images[1].h}px`}}>
+        <img className = "image-moving" src = {project.images[1].src} style={{width: `${project.images[1].w}px`, height:`${project.images[1].h}px`}}/>
+    </div>
+</section>
+    
+{/* make img-container width = width of image (add width and height to images)??? 
+</div> */}
+
+
+{/* {project.id === 1 &&
+                    <section style={{ position: "relative", overflow:"hidden"}}>
+                    <div className = "c-projects">
+                    <div className = "c-projects_row">
+                        <div className="c-projects_item" >
+                            <div className = "c-projects_inner">
+                                <div className = "c-projects_wrap">
+                                <img src = {project.images[2].src} style = {{width:"400px", height:"auto"}}/>
+                                </div>
+                            </div>
+
+                        </div>
+                    <div className="c-projects_item">
+                        <div className = "c-projects_inner">
+                            <div style={{position:"relative"}}>
+                            <img src = {project.images[1].src} style = {{width:"400px", height:"auto"}}/>
+                            </div>
+                        </div>
+                </div>
+                <div className="c-projects_item">
+                        <div className = "c-projects_inner">
+                            <div style={{position:"relative"}}>
+                            <img src = {project.images[0].src} style = {{width:"400px", height:"auto"}}/>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                </div>
+                </section>}
+                 */}
+
+                    
+                    
+                     {/* <div className = "spacer"></div>
+                    <section>
+                        
+                        <Row>
+                            <Col className = "col-md-6">
+                            <div className="black-container" style = {{height:`${project.images[2].h}px`, width:"100%"}}></div>
+                            <div className = "img-container" style = {{height:`${project.images[2].h}px`}}>
+                                <img className = "image-moving img-responsive" src = {project.images[2].src} style = {{width:"100%"}}/>
+                            </div>
+                            </Col>
+                        </Row>
+                    </section>
+                    <div className = "spacer"></div>
+                    <section>
+                        <Row>
+                            <Col className = "offset-md-3 col-md-6">
+                            <div className="black-container" style = {{height:`${project.images[1].h}px`, width:"100%"}}></div>
+                            <div className = "img-container" style = {{height:`${project.images[1].h}px`}}>
+                                <img className = "image-moving img-responsive" src = {project.images[1].src} style = {{width:"100%"}}/>
+                            </div>
+                            </Col>
+                        </Row>
+                    </section>
+                    <div className = "spacer"></div>
+                    <section>
+                        <Row>
+                            <Col className = "offset-md-5 col-md-7">
+                            <div className="black-container" style = {{height:`${project.images[0].h}px`, width:"100%"}}></div>
+                            <div className = "img-container" style = {{height:`${project.images[0].h}px`, width:"100%"}}>
+                                <img className = "image-moving img-responsive" src = {project.images[0].src} style = {{width: "100%"}}/>
+                            </div>
+                            <p className= "p-small">previous versions</p>
+                            </Col>
+                        </Row>
+                        
+                    </section>
+                    <div className = "spacer"></div>
+                    </>
+                    } */}

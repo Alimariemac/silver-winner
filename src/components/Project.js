@@ -5,7 +5,7 @@ import NonIllustrationComponent from './NonIllustrationComponent'
 import IllustrationComponent from './IllustrationComponent'
 import { NavLink } from 'react-router-dom';
 import { PROJECTS } from '../shared/projects';
-
+import Fade from 'react-reveal/Fade';
 
 class Project extends Component {
     constructor(props) {
@@ -42,6 +42,7 @@ class Project extends Component {
             <Header color = {'black'}/>
                     <Container>
                     <div className = "spacer"/>
+                    <Fade>
                     <Row>
                         <Col className="col-md-3" style={{paddingTop:"1rem"}}>
                         <h4>{project.company}</h4>
@@ -51,6 +52,7 @@ class Project extends Component {
                         <h1 style={{paddingBottom:"2rem"}}>{project.name} <img className = "inlineImg" src={project.icon}/></h1>
                         </Col>
                     </Row>
+                    </Fade>
                     <div className = "spacer"/>
                     </Container> 
         </Container> 

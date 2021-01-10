@@ -4,7 +4,11 @@ import React, {useEffect, useState} from 'react'
 import { BrowserRouter as Router} from 'react-router-dom';
 import './App.scss';
 import {IMAGES} from './shared/Images'
-import ScrollToTop from './components/ScrollToTop'
+import {Power2, gsap} from "gsap"
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 function App() {
 
@@ -30,6 +34,7 @@ const cacheImages = async(srcArray)=>{
   //   setIsLoading(false)},3000
   // );
 }
+
   
     return(
       <div>
@@ -40,14 +45,14 @@ const cacheImages = async(srcArray)=>{
       </div>
       :
        <Router >
-       <ScrollToTop />
         <div fluid className="App">
-            <Main/>
+          <Main/>
         </div>
       </Router>}
       </div>
     )
   }
+
 
 // const cacheImages = async function(IMAGES) {
 //   const promises = await IMAGES.map((src)=>{

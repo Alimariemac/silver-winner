@@ -12,20 +12,20 @@ let purplegirl="https://images.ctfassets.net/4hhd3ng2fxzv/5u1Ld43wLgFjZJYgHuV9y0
 let scientist = "https://images.ctfassets.net/4hhd3ng2fxzv/1nD2JWj1SZPG2f8e63jtsA/0b407c290b54cd3cfb07d20fca37381b/scientist.gif"
 let windows = "https://images.ctfassets.net/4hhd3ng2fxzv/5qU0xq4vd14m7IbSHaQSAj/47665b0679f56353ca7e99eb3955da2d/windows.jpg"
 //batch
-let batchOld1 = "https://images.ctfassets.net/4hhd3ng2fxzv/4IrITommrXvLUctqU2dLXg/ac4fecdf45db241ac37ede6d96ca2431/old-version-2_2x__1_.jpg"
-let batchOld2 ="https://images.ctfassets.net/4hhd3ng2fxzv/2j96KWK9I48Lx1GU6HVJVU/eb0ddde842f681e93bdd32697225d14e/old-version-1_2x__1_.jpg"
+let batchOld1 = "https://images.ctfassets.net/4hhd3ng2fxzv/7kn9V0h1ssTUW9Fc5r4VPc/33c9409e99b546973f2997d88c399b7d/old-version-1_2x.jpg"
+let batchOld2 ="https://images.ctfassets.net/4hhd3ng2fxzv/4IrITommrXvLUctqU2dLXg/f97489bc2ef1ccb2b90fae680995671c/old-version-2_2x__1_.jpg"
 let batchSelectOne = "https://images.ctfassets.net/4hhd3ng2fxzv/1BpeCvP1vUbPJnnQcRahq5/f7fe4e595ef41a7c9184acf28d459ff9/selectone_2x.jpg"
-let batchPlanning = "https://images.ctfassets.net/4hhd3ng2fxzv/1XSGnzwDlDfsSDrQDcpIvp/a156872c0847812d380528368772bbca/batch-full_2x.jpg"
+let batchPlanning = "https://images.ctfassets.net/4hhd3ng2fxzv/1XSGnzwDlDfsSDrQDcpIvp/0ed2ea9c6c9286fa28256db8e9fe2b05/batch-full_2x__1_.jpg"
 let batchSelectAll = "https://images.ctfassets.net/4hhd3ng2fxzv/f2ltdOuzrxnQQs8h0OvE8/c20c8863635351f84eca2ce641a9a4d4/selectall_2x.jpg"
-let batchFull = "https://images.ctfassets.net/4hhd3ng2fxzv/4u578pC8gSHR8Tb3WW4GxY/2c4138db0421d2bfc1a9bd6ad49249fb/batch-main_2x.jpg"
+let batchFull = "https://images.ctfassets.net/4hhd3ng2fxzv/4u578pC8gSHR8Tb3WW4GxY/41b2c900bf767ba3e58c736f4628194f/pawel-czerwinski-RkIsyD_AVvc-unsplash__1_.jpg"
 let batchMain = "https://images.ctfassets.net/4hhd3ng2fxzv/1u1KoNFb2PzyMHGoGbMHCp/6b4f1a52a7950ed65f65df54fd1d6a15/batchExportMain.jpg"
+let batchGif = "https://images.ctfassets.net/4hhd3ng2fxzv/52SKtSDyFz8PM2a2uYdZ1o/b3de2a5f7ec666fed2bc2ed84821158a/ezgif.com-gif-maker__2_.gif"
 //jager
 let JagerMain = "https://images.ctfassets.net/4hhd3ng2fxzv/7dRNUGfSJ6EbjhTx9kVNbk/9bb865e8d6c0b448c1d11b8ca50522de/Jagerphone.jpg"
 let JagerWires = "https://images.ctfassets.net/4hhd3ng2fxzv/1Bgm34oaODPwqq0xm1anNq/98e30cc3a1f184c9a6442b3a4ab433c6/wireframes.jpg"
 let JagerFinal = "https://images.ctfassets.net/4hhd3ng2fxzv/7o1h9doFiK5RZttwUAAFmg/3cf89584d915a63dd0c75f9c80e8476b/jager-full.jpg"
 let JagerFull ="https://images.ctfassets.net/4hhd3ng2fxzv/4FrtJbXvOfatALL606unAO/d78db01a0d6439da8005e53129bd77b9/jager-top.jpg"
-//fsq
-let FSQMain = "https://images.ctfassets.net/4hhd3ng2fxzv/21Qyx4O4B4enGTrIe4ycC/686ef8caef27afcd809b4baad5b0a8e5/FSQMain.jpg"
+let JagerGif = "https://images.ctfassets.net/4hhd3ng2fxzv/7JmpCyZkjG7LPJ9HuQSnWM/3f504905b58cbf77ed16878bef79d560/ezgif.com-gif-maker__3_.gif"
 //queerly
 let queerlyMain="https://images.ctfassets.net/4hhd3ng2fxzv/1cKr9KGiQVuLhe3QVzgKA0/024102754964eb1f49cc779488d7b2c9/queerlyMain.jpg"
 let queerlyIcons = "https://images.ctfassets.net/4hhd3ng2fxzv/2Go2dStuwW67CxuDK0nhII/b6055e2957e63eafd502706f27e6feea/icons_2x.jpg"
@@ -42,25 +42,70 @@ let green = "https://images.ctfassets.net/4hhd3ng2fxzv/6Hyh62h8hBl7K3mZIEQ8N3/b2
 let purple = "https://images.ctfassets.net/4hhd3ng2fxzv/33lbvAY2dnLFk3O2oM6oSl/689b75c5843645e472e64096ba96ea0c/texture3.jpg"
 //misc
 let Hangel = "https://images.ctfassets.net/4hhd3ng2fxzv/59XLeKjKskOaSI1Ar30Mij/ead55ae60e97cae2192e17738115ee06/Hangel.jpg"
+//FSQ
+let FSQFull = "https://images.ctfassets.net/4hhd3ng2fxzv/7M57jPnfNd1IfFGGLg26V4/5b9a346ad1d0596d04f4bd3b51ab5cfd/FSQ-full.jpg"
+let FSQOld = "https://images.ctfassets.net/4hhd3ng2fxzv/4LRAVHIRU0DZtDO1eGdIch/2d7716bddf29bf08d857b7dd8fed5271/FSQ-old_site.jpg"
+let FactualOld = "https://images.ctfassets.net/4hhd3ng2fxzv/qwef9jojH6IEiRvFkCDve/68023e1f40f703213cdb498080a48dd4/factual.jpg"
+let PlacedOld = "https://images.ctfassets.net/4hhd3ng2fxzv/6Xuap2t32ogPXB4wcCTVue/9f29e07c26efa61b100c26f950193042/placed.jpg"
+let FSQMain = "https://images.ctfassets.net/4hhd3ng2fxzv/21Qyx4O4B4enGTrIe4ycC/686ef8caef27afcd809b4baad5b0a8e5/FSQMain.jpg"
+let FSQUserFlow = "https://images.ctfassets.net/4hhd3ng2fxzv/q8sHvD5z6IakCBjxec9lm/3a4377ed4e11d6414415eb4577b998b1/FSQ-userFlow.jpg"
+let FSQSurvey = "https://images.ctfassets.net/4hhd3ng2fxzv/yVt825YehRnYQqdpU6p5t/8a43b0fed409c80466ecd8bc98e54910/FSQ-survey.jpg"
+let FSQStakeholder = "https://images.ctfassets.net/4hhd3ng2fxzv/43Mh7xGe0xP1G4f22k2Mq4/11f79796f3366724e5295ce7bd3174b5/FSQ-stakeholders.jpg"
 
 export const IMAGES = [
+    {
+        "project": "FSQ",
+        "images":[
+        {id:0,
+        src:FSQOld
+        },
+        {id:1,
+        src:FactualOld
+        },
+        {id:2,
+        src:PlacedOld
+        },
+        {
+            id:3,
+            src:FSQUserFlow
+        },
+        {
+            id:4,
+            src:FSQSurvey
+        },
+        {
+            id:5,
+            src:FSQStakeholder
+        },
+
+        ],
+        "fullImage":{
+            id:0, 
+            src:FSQFull
+        },
+        "coverImage":{
+            id:0, 
+            src: FSQMain
+        }
+    },
+
     {
        "project": "Queerly",
        "images":[
             {id:0,
-            src:queerlyWires1
+            src:queerlyWires1,
             },
             {id:1,
-                src:queerlyWires2
+            src:queerlyWires2,
             },
             {id:2,
-                src:queerlyIcons
+                src:queerlyIcons,
             },
             {id:3,
-                src:queerlyIllustrations
+                src:queerlyIllustrations,
             },
             {id:4,
-                src:queerlyPages
+                src:queerlyPages,
             }
         ],
         "fullImage":{
@@ -134,15 +179,23 @@ export const IMAGES = [
         "project": "Batch",
         "images":[
         {id:0,
-        src:batchOld1},
+        src:batchOld2,
+    },
         {id:1,
-        src:batchOld2},
+        src:batchOld1,
+    },
         {id:2,
-        src:batchPlanning},
+        src:batchPlanning,
+    },
         {id:3,
-        src:batchSelectAll},
+        src:batchSelectAll,
+    },
         {id:4,
-        src:batchSelectOne},
+        src:batchSelectOne,
+    },
+    {id:5,
+        src:batchGif,
+    }
     ],
         "fullImage":{
             id:0, 
@@ -162,6 +215,9 @@ export const IMAGES = [
         {id:1,
         src:JagerFinal
         },
+        {id:2,
+        src: JagerGif
+    }
         ],
         "fullImage":{
             id:0, 
@@ -172,22 +228,6 @@ export const IMAGES = [
             src: JagerMain
         }
        
-    },
-    {
-        "project": "FSQ",
-        "images":[
-        {id:0,
-        src:FSQMain
-        },
-        ],
-        "fullImage":{
-            id:0, 
-            src:JagerFull
-        },
-        "coverImage":{
-            id:0, 
-            src: FSQMain
-        }
     },
     {
         "project": "backgrounds",
