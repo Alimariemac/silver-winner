@@ -152,7 +152,6 @@ html {
 .mainContainer {
   position: relative;
   width: 100%;
-  height: 700px;
   mix-blend-mode: luminosity;
   background-size: cover;
   overflow: hidden;
@@ -162,7 +161,7 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 2000;
+  z-index: 1000;
   background-size: cover;
 }
 
@@ -198,10 +197,6 @@ html {
   }
 }
 
-.inlineImg {
-  max-width: 100px;
-}
-
 p {
   line-height: 1.7rem;
   font-family: sans-serif;
@@ -217,7 +212,6 @@ p {
 }
 
 .largeText {
-  font-size: 8rem;
   color: white;
   text-align: center;
   margin: auto;
@@ -238,12 +232,6 @@ p {
   padding: 2rem;
 }
 
-@media (min-width: 600px) {
-  .grid1 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (min-width: 900px) {
   h1 {
     font-size: 5rem;
@@ -253,13 +241,44 @@ p {
     font-size: 3rem;
     font-weight: 500;
   }
+  .largeText {
+    font-size: 7rem;
+  }
+  .inlineImg {
+    max-width: 100px;
+  }
+  .crop-image {
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+  }
+  .mainContainer {
+    height: 700px;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .largeText {
+    font-size: 5rem;
+  }
+  .inlineImg {
+    max-width: 50px;
+  }
+  .crop-image {
+    width: 90%;
+    height: 70%;
+    top: 15%;
+    left: 5%;
+  }
+  .mainContainer {
+    height: 500px;
+    margin-bottom: 3rem;
   }
 }

@@ -26,7 +26,7 @@ class Accordion extends Component {
                     <Row>
                     <div className = "order-lg-2 col-lg-6 offset-lg-1 mainContainer" style={{backgroundColor:`${project.color}`, backgroundImage: `url(${project.backgroundImage})`}}>
                             <h1 className = "largeText textTop">{project.text1}</h1>
-                            <div className = "img-container" style={{width:"70%", height:"70%", top:"15%", left:"15%"}}>
+                            <div className = "img-container crop-image" >
                             <div className = "mainImg image-moving" style = {{backgroundImage: `url(${project.coverImage})`}}></div>   
                             </div>
                             <h1 className = "largeText textBottom">{project.text2}</h1>
