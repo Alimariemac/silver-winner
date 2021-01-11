@@ -37,7 +37,7 @@ function Home(props){
                 <div className = "spacer"/>
                 <div className = "spacer"/>
                 </Container>
-                <Accordion />
+                <Accordion/>
                 <Container>
                 <div className = "spacer"/>
                 <Row>

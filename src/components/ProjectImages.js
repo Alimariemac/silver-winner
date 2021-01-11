@@ -11,7 +11,7 @@ export function Left1Right2(props){
                 <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pb-3">
-                        <img className = "image-moving img-responsive" src = {props.img1.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.img1.src} style = {{width:"100%"}} alt={props.img1.alt}/>
                     </div>
                     </section>
                 </Col>  
@@ -19,13 +19,13 @@ export function Left1Right2(props){
                 <section>
                     <div className="black-container " style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pl-md-3 pb-3" >
-                        <img className = "image-moving img-responsive" src = {props.img2.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.img2.src} style = {{width:"100%"}} alt={props.img2.alt}/>
                     </div>
                     </section>
                     <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pl-md-3" >
-                        <img className = "image-moving img-responsive" src = {props.img3.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.img3.src} style = {{width:"100%"}} alt={props.img3.alt}/>
                     </div>
                     </section>
                 </Col>  
@@ -44,7 +44,7 @@ export function DoubleImage(props){
                 <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pr-md-2 pb-3">
-                        <img className = "image-moving img-responsive" src = {props.img1.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.img1.src} alt={props.img1.alt} style = {{width:"100%"}}/>
                     </div>
                     </section>
                 </Col>  
@@ -52,7 +52,7 @@ export function DoubleImage(props){
                 <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pl-md-2">
-                        <img className = "image-moving img-responsive" src = {props.img2.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.img2.src} alt={props.img2.alt} style = {{width:"100%"}}/>
                     </div>
                     </section>
                 </Col>  
@@ -71,7 +71,7 @@ export function OneOffsetImg(props){
                 <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pr-md-2 pb-3">
-                        <img className = "image-moving img-responsive" src = {props.image.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.image.src} alt={props.image.alt} style = {{width:"100%"}}/>
                     </div>
                     </section>
                 </Col>  
@@ -88,7 +88,7 @@ export function OneFarOffsetImg(props){
                 <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pr-md-2 pb-3">
-                        <img className = "image-moving img-responsive" src = {props.image.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.image.src} alt={props.image.alt} style = {{width:"100%"}}/>
                     </div>
                     </section>
                 </Col>  
@@ -108,7 +108,7 @@ export function FullOne(props){
                 <section>
                     <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
                     <div className = "img-container pb-3">
-                        <img className = "image-moving img-responsive" src = {props.image.src} style = {{width:"100%"}}/>
+                        <img className = "image-moving img-responsive" src = {props.image.src} alt={props.image.alt} style = {{width:"100%"}}/>
                     </div>
                     </section>
                 </Col>  

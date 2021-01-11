@@ -108,14 +108,16 @@ function GetProject(props){
     // let imageReveal = CSSRulePlugin.getRule('.img-container:after')
     const { pathname } = useLocation();
     const project = props.project
-    const numbers = project.numbers.map(m=>{
+
+    const colorSection = (project.numbers ? project.numbers.map(m=>{
             return(
-            <Col key = {m.id}>
-            <h2 style = {{fontSize:"6rem"}}>{m.num}</h2>
-            <p>{m.text}</p>
+            <Col key = {m.id} col-md-4>
+            <h3 style = {{fontSize:"6rem", textAlign:"center"}}>{m.num}</h3>
+            <p style={{textAlign:"center"}}>{m.text}</p>
             </Col>
             )
-        })
+        }) : <Col><h3>{project.quote}</h3><p>-{project.attribution}</p></Col>)
+        
         
         useEffect(()=>{
             
@@ -209,6 +211,13 @@ return(
                 </div>
             </Row>
             </Fade>
+            {project.id ===0 &&
+            <>
+             <DoubleImage img1={project.images[6]} img2={project.images[7]}/>
+            <DoubleImage img1 = {project.images[9]} img2={project.images[8]}/>  
+            <FullOne image = {project.images[10]} />
+            </>
+            }
             {project.id === 1 &&
                    <DoubleImage img1={project.images[3]} img2={project.images[4]}/>
                     }
@@ -227,7 +236,7 @@ return(
                 <Container>
                     <Fade>
                 <Row>
-                    {numbers}
+                    {colorSection}
              </Row>
              </Fade>
              
@@ -243,7 +252,11 @@ return(
                 <OneOffsetImg image = {project.images[4]} />  
             }
     <Fade>
+        
             <Row>
+            {project.id === 0 &&
+                <FullOne image = {project.images[11]} />  
+            }
                 <div className = "col col-md-8 offset-md-4">
                 <NextSteps project = {project}/>
                 </div>

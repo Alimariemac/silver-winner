@@ -45,7 +45,7 @@ const cacheImages = async(srcArray)=>{
       </div>
       :
        <Router >
-        <div fluid className="App">
+        <div className="App fluid">
           <Main/>
         </div>
       </Router>}

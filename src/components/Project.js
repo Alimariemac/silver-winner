@@ -14,6 +14,9 @@ class Project extends Component {
             projects: PROJECTS
         }
     }
+    componentDidMount() {
+        document.title = `${this.props.project.name}`;
+      }
     
     render(){
         
