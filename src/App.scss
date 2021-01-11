@@ -108,11 +108,6 @@ html {
   padding-top: 5rem;
 }
 
-.header {
-  padding-top: 20px;
-  padding-left: 20px;
-}
-
 .hiddenDiv {
   display: none;
 }
@@ -260,6 +255,9 @@ p {
     width: 100px;
     height: 100px;
   }
+  .header {
+    padding-top: 20px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -286,7 +284,10 @@ p {
     margin-bottom: 3rem;
   }
   .mainIcon {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+  }
+  .header {
+    padding-top: 20px;
   }
 }
