@@ -35,7 +35,7 @@ class DarkModeToggle extends Component {
   render() {
     return (
       <React.Fragment>
-      <div className = "modeIcon" onClick={this.handleModeChange} style={{width: "100px", height:"100px"}}></div>
+      <div className = "modeIcon mainIcon" onClick={this.handleModeChange}></div>
       </React.Fragment>
     );
   }
