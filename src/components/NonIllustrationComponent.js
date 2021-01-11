@@ -1,6 +1,6 @@
 import {React, Fragment, useEffect} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
-import {Left1Right2, DoubleImage, OneOffsetImg, FullOne, OneFarOffsetImg} from '../components/ProjectImages'
+import {Left1Right2, DoubleImage, OneOffsetImg, FullOne} from '../components/ProjectImages'
 import Fade from 'react-reveal/Fade';
 import {Power2, gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,7 +13,7 @@ function Top(props){
         <section>
         <div className="black-container pageMainImg" ></div>
             <div className = "img-container pageMainImg" style={{width:"100%", height:"70vh"}}>
-                <img className = "image-moving" src = {props.project.fullImage} style={{objectFit:"cover", width:"100%"}}/>
+                <img className = "image-moving" src = {props.project.fullImage} alt = {props.project.fullImage.alt} style={{objectFit:"cover", width:"100%"}}/>
             </div>
         </section>
     )
@@ -269,99 +269,3 @@ return(
 }
 
 export default GetProject;
-{/* <div className = "grid1">
-<section style = {{gridColumn: " 1/ span 2", gridRow: "1 / span 2"}}>
-    <div className="black-container"></div>
-    <div className = "img-container">
-        <div className = "image-moving"  style={{background:`url(${project.images[2].src})`, backgroundSize:"cover", width: `${project.images[2].w}px`, height:`${project.images[2].h}px`}}/>
-    </div>
-</section>
-<section style = {{gridColumn: "2 / span 2", gridRow: "3 / span 1"}}>
-        <div className="black-container"></div>
-        <div className = "img-container " style = {{width: `${project.images[0].w}px`, height:`${project.images[0].h}px`}}>
-        <img className = "image-moving" src = {project.images[0].src} style={{width: `${project.images[0].w}px`, height:`${project.images[0].h}px`}}/>
-    </div>
-</section>
-<section style = {{gridColumn: " 2 / span 2", gridRow: "5 / span 2"}}>
-    <div className="black-container"></div>
-    <div className = "img-container" style = {{width: `${project.images[1].w}px`, height:`${project.images[1].h}px`}}>
-        <img className = "image-moving" src = {project.images[1].src} style={{width: `${project.images[1].w}px`, height:`${project.images[1].h}px`}}/>
-    </div>
-</section>
-    
-{/* make img-container width = width of image (add width and height to images)??? 
-</div> */}
-
-
-{/* {project.id === 1 &&
-                    <section style={{ position: "relative", overflow:"hidden"}}>
-                    <div className = "c-projects">
-                    <div className = "c-projects_row">
-                        <div className="c-projects_item" >
-                            <div className = "c-projects_inner">
-                                <div className = "c-projects_wrap">
-                                <img src = {project.images[2].src} style = {{width:"400px", height:"auto"}}/>
-                                </div>
-                            </div>
-
-                        </div>
-                    <div className="c-projects_item">
-                        <div className = "c-projects_inner">
-                            <div style={{position:"relative"}}>
-                            <img src = {project.images[1].src} style = {{width:"400px", height:"auto"}}/>
-                            </div>
-                        </div>
-                </div>
-                <div className="c-projects_item">
-                        <div className = "c-projects_inner">
-                            <div style={{position:"relative"}}>
-                            <img src = {project.images[0].src} style = {{width:"400px", height:"auto"}}/>
-                            </div>
-                        </div>
-                </div>
-                </div>
-                </div>
-                </section>}
-                 */}
-
-                    
-                    
-                     {/* <div className = "spacer"></div>
-                    <section>
-                        
-                        <Row>
-                            <Col className = "col-md-6">
-                            <div className="black-container" style = {{height:`${project.images[2].h}px`, width:"100%"}}></div>
-                            <div className = "img-container" style = {{height:`${project.images[2].h}px`}}>
-                                <img className = "image-moving img-responsive" src = {project.images[2].src} style = {{width:"100%"}}/>
-                            </div>
-                            </Col>
-                        </Row>
-                    </section>
-                    <div className = "spacer"></div>
-                    <section>
-                        <Row>
-                            <Col className = "offset-md-3 col-md-6">
-                            <div className="black-container" style = {{height:`${project.images[1].h}px`, width:"100%"}}></div>
-                            <div className = "img-container" style = {{height:`${project.images[1].h}px`}}>
-                                <img className = "image-moving img-responsive" src = {project.images[1].src} style = {{width:"100%"}}/>
-                            </div>
-                            </Col>
-                        </Row>
-                    </section>
-                    <div className = "spacer"></div>
-                    <section>
-                        <Row>
-                            <Col className = "offset-md-5 col-md-7">
-                            <div className="black-container" style = {{height:`${project.images[0].h}px`, width:"100%"}}></div>
-                            <div className = "img-container" style = {{height:`${project.images[0].h}px`, width:"100%"}}>
-                                <img className = "image-moving img-responsive" src = {project.images[0].src} style = {{width: "100%"}}/>
-                            </div>
-                            <p className= "p-small">previous versions</p>
-                            </Col>
-                        </Row>
-                        
-                    </section>
-                    <div className = "spacer"></div>
-                    </>
-                    } */}

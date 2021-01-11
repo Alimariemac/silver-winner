@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import { BrowserRouter as Router} from 'react-router-dom';
 import './App.scss';
 import {IMAGES} from './shared/Images'
-import {Power2, gsap} from "gsap"
+import {gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);

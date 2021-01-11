@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { ReactComponent as Moon } from '../assets/moon.svg';
-import { ReactComponent as Sun } from '../assets/sun.svg';
 import '../App.scss';
 
 class DarkModeToggle extends Component {

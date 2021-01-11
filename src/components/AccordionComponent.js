@@ -18,7 +18,7 @@ class Accordion extends Component {
             let count = 0
             let tag = project.tags.split('\n').map(i=>{
                 count++
-                return <h5 style = {{textTransform:"uppercase"}}>{i}</h5>
+                return <h5 key = {count} style = {{textTransform:"uppercase"}}>{i}</h5>
 
             })
             return(   

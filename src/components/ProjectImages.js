@@ -80,23 +80,6 @@ export function OneOffsetImg(props){
     )
 }
 
-export function OneFarOffsetImg(props){   
-    return(
-        <>
-            <Row>
-                <Col className = "col-12 offset-md-4 col-md-4">
-                <section>
-                    <div className="black-container" style = {{width:"100%", height:"100%"}}></div>
-                    <div className = "img-container pr-md-2 pb-3">
-                        <img className = "image-moving img-responsive" src = {props.image.src} alt={props.image.alt} style = {{width:"100%"}}/>
-                    </div>
-                    </section>
-                </Col>  
-            </Row>
-        </>
-    )
-}
-
 
 export function FullOne(props){
     

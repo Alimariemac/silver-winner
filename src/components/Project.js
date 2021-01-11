@@ -1,4 +1,4 @@
-import {React, Component, Fragment, useEffect} from 'react';
+import {React, Component, Fragment} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
 import Header from './HeaderComponent';
 import NonIllustrationComponent from './NonIllustrationComponent'
@@ -24,7 +24,7 @@ class Project extends Component {
         const projects = this.state.projects
 
         let nextProject
-        if(project.id == projects.length-1){
+        if(project.id === projects.length-1){
             nextProject = projects[0]
         }
         else{
@@ -52,7 +52,7 @@ class Project extends Component {
                         <p>{project.tags}</p>
                         </Col>
                         <Col className = "col-md-8 offset-md-1">
-                        <h1 style={{paddingBottom:"2rem"}}>{project.name} <img className = "inlineImg" src={project.icon}/></h1>
+                        <h1 style={{paddingBottom:"2rem"}}>{project.name} <img className = "inlineImg" src={project.icon} alt="an icon associated with this project"/></h1>
                         </Col>
                     </Row>
                     </Fade>

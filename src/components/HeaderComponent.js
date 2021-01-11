@@ -1,5 +1,5 @@
 import { React, Component }  from 'react';
-import {Row, Col, Nav} from 'react-bootstrap'
+import {Nav} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import DarkModeToggle from '../components/DarkModeToggle';
 

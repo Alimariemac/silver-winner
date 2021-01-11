@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { Fragment } from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
 import Accordion from './AccordionComponent'
-import {EXPERIENCE} from '../shared/experience'
 import {ReactComponent as Rainbow} from '../assets/rainbow.svg'
 import {ReactComponent as FlowerDrop} from '../assets/flower-drop.svg'
 import Header from './HeaderComponent';
@@ -20,7 +19,7 @@ function Home(props){
                     <Row>
                     <Col>
                             <h1 className="center">
-                            Experiences that enchant <Rainbow className = "inlineImg"/>. I run on pups and plants <span><img className = "inlineImg" src ={Hangel}/></span>, books and
+                            Experiences that enchant <Rainbow className = "inlineImg"/>. I run on pups and plants <span><img className = "inlineImg" src ={Hangel} alt="a white Jindo dog sniffing a flower"/></span>, books and
                             Stardew Valley<FlowerDrop className = "inlineImg"/>
                             </h1>
                         </Col>
