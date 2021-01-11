@@ -14,11 +14,11 @@ class Accordion extends Component {
 
     render(){
         const directory = this.state.projects.map(project => {
-            let title = <h2 data-event={project.id+1} key={project.id} style = {{textTransform:"uppercase"}}>{project.name}</h2>
+            let title = <h2 data-event={project.id+1} key={project.id} >{project.name}</h2>
             let count = 0
             let tag = project.tags.split('\n').map(i=>{
                 count++
-                return <h4 key={count} style = {{textTransform:"uppercase"}}>{i}</h4>
+                return <h5 style = {{textTransform:"uppercase"}}>{i}</h5>
 
             })
             return(   
